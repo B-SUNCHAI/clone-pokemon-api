@@ -1,0 +1,28 @@
+.heading {
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin: 1rem 0 4rem;
+  color: #444;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  position: relative;
+
+  width: 2em;
+  height: 4px;
+  background-color: #fb6c6c;
+  top: 100%;
+  left: 50%;
+  margin-left: -1em;
+}
+
+.heading > i {
+  display: inline-block;
+  height: 0.6em;
+  width: 0.6em;
+  background-image: url("../../img/pokeball.svg");
+  background-repeat: no-repeat;
+}
