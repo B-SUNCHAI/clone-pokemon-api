@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Card from "./components/cardContent/card";
 import Heading from "./components/headContent/heading";
+import DetailPoke from "./components/detailContent/detailView";
 
 const App = () => {
   const [pokeData, setPokeData] = useState([]);
@@ -42,18 +43,19 @@ const App = () => {
     try {
       pokeFun();
     } catch (error) {
-      setError("Something went wrong !!");
+      setError("Something went wrong !!", error());
     } finally {
       return () => abortController.abort();
     }
   }, [url]);
-
-  console.log(pokeData);
+  console.log(pokeDex);
+  // console.log(pokeDex);
 
   return (
     <div className=" p-5 ">
       <div>
         <Heading />
+        <DetailPoke stats={pokeDex} />
         <div className="btn-group">
           {prevUrl ? (
             <button
