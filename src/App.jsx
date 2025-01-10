@@ -48,7 +48,7 @@ const App = () => {
       return () => abortController.abort();
     }
   }, [url]);
-  console.log(pokeDex);
+  // console.log(pokeDex);
   // console.log(pokeDex);
 
   return (
@@ -56,6 +56,9 @@ const App = () => {
       <div>
         <Heading />
         <DetailPoke stats={pokeDex} />
+        <div className="z-50" onClick={() => setPokeDex("")}>
+          close
+        </div>
         <div className="btn-group">
           {prevUrl ? (
             <button
@@ -87,6 +90,7 @@ const App = () => {
           pokemon={pokeData}
           loading={loading}
           infoPokemon={(poke) => setPokeDex(poke)}
+          onClick={() => setShowModal(true)}
         />
       </div>
     </div>

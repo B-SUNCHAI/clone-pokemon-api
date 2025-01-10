@@ -1,10 +1,15 @@
 import React from "react";
+import { memo } from "react";
 import "./style.css";
+
+function capitalizeFirstLetter(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
 
 const Card = ({ pokemon, loading, infoPokemon }) => {
   // console.log(pokemon);
   return (
-    <div className=" justify-items-center">
+    <div className=" justify-items-center ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {loading ? (
           <h1>Loading...</h1>
@@ -33,18 +38,20 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
                     {/* {item.id} */}
                   </div>
 
-                  <div className="mb-5 text-white text-3xl">{item?.name}</div>
-                  <div className="text-white text-xl font-light">
-                    {item?.types[0]?.type?.name}{" "}
+                  <div className="mb-5 text-white text-3xl">
+                    {capitalizeFirstLetter(item?.name)}
                   </div>
                   <div className="text-white text-xl font-light">
-                    {item?.types[1]?.type?.name}{" "}
+                    {capitalizeFirstLetter(item?.types[0]?.type?.name)}{" "}
+                  </div>
+                  <div className="text-white text-xl font-light">
+                    {capitalizeFirstLetter(item?.types[1]?.type?.name)}{" "}
                   </div>
                 </h5>
               </div>
               <div className="m-auto max-w-[50%] justify-items-center">
                 <img
-                  className=" h-[160px]"
+                  className="h-[160px]"
                   src={item?.sprites?.other?.dream_world?.front_default}
                   alt=""
                 />
@@ -56,4 +63,4 @@ const Card = ({ pokemon, loading, infoPokemon }) => {
     </div>
   );
 };
-export default Card;
+export default memo(Card);
