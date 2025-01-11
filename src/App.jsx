@@ -58,10 +58,10 @@ const App = () => {
         {!pokeDex ? (
           ""
         ) : (
-          <div>
+          <>
             <DetailPoke stats={pokeDex} />
             <div onClick={() => setPokeDex("")} className="overlay" />,
-          </div>
+          </>
         )}
 
         <div className="btn-group">
