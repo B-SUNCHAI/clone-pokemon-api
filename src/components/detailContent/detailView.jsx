@@ -16,7 +16,7 @@ function detailView({ stats }) {
         <>
           {/* <div className="overlay"> */}
           <div
-            className={`-card-view left-[20%] w-[350px] border-solid border-4 border-[#d9ff00] fixed lg:left-[30%] xl:left-[40%] justify-items-center type-${stats?.types[0]?.type?.name} `}
+            className={`-card-view  w-[350px] border-solid border-4 border-[#d9ff00] fixed left-[5%] sm:left-[20%] lg:left-[30%] xl:left-[40%] justify-items-center type-${stats?.types[0]?.type?.name} `}
           >
             <h1 className="static right-0 w-full p-5 flex justify-between">
               <div className="-name">{capitalizeFirstLetter(stats?.name)}</div>{" "}
