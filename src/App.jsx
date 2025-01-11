@@ -55,10 +55,15 @@ const App = () => {
     <div className=" p-5 ">
       <div>
         <Heading />
-        <DetailPoke stats={pokeDex} />
-        <div className="z-50" onClick={() => setPokeDex("")}>
-          close
-        </div>
+        {!pokeDex ? (
+          ""
+        ) : (
+          <div>
+            <DetailPoke stats={pokeDex} />
+            <div onClick={() => setPokeDex("")} className="overlay" />,
+          </div>
+        )}
+
         <div className="btn-group">
           {prevUrl ? (
             <button

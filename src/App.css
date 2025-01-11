@@ -157,7 +157,7 @@ body {
 }
 
 .overlay {
-  z-index: 51;
+  z-index: 40;
   position: fixed;
   top: 0;
   right: 0;

@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: flex-end;
   position: fixed;
-  z-index: 99999;
+  z-index: 41;
   background-color: #fff;
   border-radius: 3rem;
   animation: 0.3s pull-up-center both ease-out;
@@ -130,6 +130,7 @@
   background-color: var(--color);
   box-shadow: 0 0 20px 0 var(--color);
   border-radius: 1rem;
+  z-index: 41;
 }
 
 .-card-bg {
